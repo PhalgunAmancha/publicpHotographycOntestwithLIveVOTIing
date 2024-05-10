@@ -1,0 +1,25 @@
+<nav>
+    <a class="active" href="./">Game</a>
+    <a href="./standings">Standings</a>
+</nav>
+
+{{#if photo}}
+
+    <img src="photos/{{photo.name}}" width="530" height="420" alt="Cat Picture" />
+
+    <div class="button-holder">
+        <form action="./like" method="post">
+            <input type="hidden" name="photo" value="{{photo.name}}" />
+            <input type="submit" value="Cute!" />
+        </form>
+        <form action="./notcute" method="post">
+            <input type="hidden" name="photo" value="{{photo.name}}" />
+            <input type="submit" value="Not Cute!" />
+        </form>
+    </div>
+
+{{else}}
+
+    <h3>No more photos to vote on! Check out the <a href="./standings">standings</a>.</h3>
+
+{{/if}}
